@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useId, useRef } from 'react';
 import type { RealtimePostgresChangesPayload } from '@supabase/supabase-js';
 import { supabase } from '../supabaseClient';
 
@@ -11,12 +11,15 @@ export function useRealtimeTable<T extends object>(
   onChange: (payload: RealtimePostgresChangesPayload<T>) => void,
   filter?: string
 ) {
+  // More than one mounted component can subscribe to the same table/filter
+  // combination. Supabase channels must have distinct names in that case.
+  const instanceId = useId().replace(/:/g, '');
   const onChangeRef = useRef(onChange);
   onChangeRef.current = onChange;
 
   useEffect(() => {
     const channel = supabase
-      .channel(`realtime:${table}:${filter ?? 'all'}`)
+      .channel(`realtime:${instanceId}:${table}:${filter ?? 'all'}`)
       .on(
         'postgres_changes',
         {
@@ -36,5 +39,5 @@ export function useRealtimeTable<T extends object>(
       supabase.removeChannel(channel);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [table, filter]);
+  }, [instanceId, table, filter]);
 }
