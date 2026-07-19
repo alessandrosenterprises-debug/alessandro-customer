@@ -3,8 +3,9 @@ import { useAuth } from '../hooks/useAuth';
 import { getActivePromotions } from '../services/promotions';
 import { getActiveServices } from '../services/services';
 import { getCustomerBookings } from '../services/bookings';
+import { getCustomer } from '../services/customers';
 import { useRealtimeTable } from '../hooks/useRealtimeTable';
-import type { Promotion, Service, Booking } from '../types';
+import type { Promotion, Service, Booking, Customer } from '../types';
 import './pages.css';
 
 export function Home() {
@@ -12,6 +13,7 @@ export function Home() {
   const [promotions, setPromotions] = useState<Promotion[]>([]);
   const [services, setServices] = useState<Service[]>([]);
   const [bookings, setBookings] = useState<Booking[]>([]);
+  const [customer, setCustomer] = useState<Customer | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [refreshKey, setRefreshKey] = useState(0);
@@ -22,10 +24,11 @@ export function Home() {
 
     async function load() {
       setLoading(true);
-      const [promoRes, servicesRes, bookingsRes] = await Promise.all([
+      const [promoRes, servicesRes, bookingsRes, customerRes] = await Promise.all([
         getActivePromotions(),
         getActiveServices(),
         getCustomerBookings(user!.id),
+        getCustomer(user!.id),
       ]);
 
       if (cancelled) return;
@@ -41,6 +44,7 @@ export function Home() {
 
       setPromotions((promoRes.data ?? []).slice(0, 3));
       setServices((servicesRes.data ?? []).slice(0, 3));
+      setCustomer(customerRes.data ?? null);
       const upcoming = (bookingsRes.data ?? []).filter(
         (b) => new Date(b.date).getTime() >= Date.now()
       );
@@ -64,7 +68,7 @@ export function Home() {
 
   return (
     <div className="page">
-      <h1>Welcome{user?.email ? `, ${user.email}` : ''}!</h1>
+      <h1>Welcome{customer?.name ? `, ${customer.name}` : ''}!</h1>
       <p className="page-subtitle">Here's what's new at Alessandro Enterprises.</p>
 
       {loading && <div className="page-loading">Loading your dashboard...</div>}
