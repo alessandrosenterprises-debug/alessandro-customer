@@ -9,6 +9,7 @@ import { Login } from './pages/Login';
 import { Register } from './pages/Register';
 import { Home } from './pages/Home';
 import { Profile } from './pages/Profile';
+import { Settings } from './pages/Settings';
 import { Products } from './pages/Products';
 import { Promotions } from './pages/Promotions';
 import { Booking } from './pages/Booking';
@@ -43,6 +44,7 @@ function AuthenticatedShell() {
             </ProtectedRoute>
           }
         />
+        <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
         <Route
           path="/products"
           element={
