@@ -5,6 +5,7 @@ import './Navbar.css';
 const links = [
   { to: '/', label: 'Home' },
   { to: '/profile', label: 'Profile' },
+  { to: '/settings', label: 'Settings' },
   { to: '/products', label: 'Products' },
   { to: '/promotions', label: 'Promotions' },
   { to: '/book', label: 'Book' },
@@ -26,7 +27,6 @@ export function Navbar() {
         />
         <span>Alessandro Enterprises</span>
       </div>
-
       <div className="navbar-links">
         {links.map((link) => (
           <NavLink
@@ -41,7 +41,6 @@ export function Navbar() {
           </NavLink>
         ))}
       </div>
-
       <div className="navbar-user">
         {user && (
           <>
