@@ -63,3 +63,17 @@
 .navbar-logout:hover {
   background: #1f2937;
 }
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.brand-logo {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  padding: 3px;
+  border-radius: 50%;
+  background: #fff;
+}
