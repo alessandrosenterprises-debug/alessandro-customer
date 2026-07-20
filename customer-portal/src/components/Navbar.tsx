@@ -18,7 +18,15 @@ export function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="navbar-brand">Alessandro Enterprises</div>
+      <div className="navbar-brand">
+        <img
+          src="/logos/alessandroenterprises.png"
+          alt="Alessandro Enterprises"
+          className="brand-logo"
+        />
+        <span>Alessandro Enterprises</span>
+      </div>
+
       <div className="navbar-links">
         {links.map((link) => (
           <NavLink
@@ -33,6 +41,7 @@ export function Navbar() {
           </NavLink>
         ))}
       </div>
+
       <div className="navbar-user">
         {user && (
           <>
