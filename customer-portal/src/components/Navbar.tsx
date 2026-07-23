@@ -40,6 +40,20 @@ export function Navbar() {
             {link.label}
           </NavLink>
         ))}
+        <a
+          className="navbar-link"
+          href="https://alessandros-enterprises.vercel.app"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Explore website ↗
+        </a>
+        <a className="navbar-link" href="mailto:alessandrosenterprises@gmail.com">
+          Email support
+        </a>
+        <a className="navbar-link" href="https://wa.me/260768148043" target="_blank" rel="noreferrer">
+          WhatsApp
+        </a>
       </div>
       <div className="navbar-user">
         {user && (
