@@ -5,6 +5,7 @@ import { getActiveServices } from '../services/services';
 import { createBooking } from '../services/bookings';
 import { useRealtimeTable } from '../hooks/useRealtimeTable';
 import type { Service } from '../types';
+import { formatZMW } from '../utils/currency';
 import './pages.css';
 
 export function Booking() {
@@ -109,7 +110,7 @@ export function Booking() {
             </option>
             {services.map((s) => (
               <option key={s.id} value={s.id}>
-                {s.name} (${s.price})
+                {s.name} ({formatZMW(s.price)})
               </option>
             ))}
           </select>
