@@ -191,12 +191,30 @@
 .email-card { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:12px; align-items:center; }.email-card .card-meta { grid-column:1 / -1; margin:0; }.email-preview { display:-webkit-box; margin:4px 0 0; overflow:hidden; -webkit-box-orient:vertical; -webkit-line-clamp:1; }.email-modal-backdrop { position:fixed; inset:0; z-index:2000; display:grid; place-items:center; padding:20px; background:rgba(5,22,45,.56); backdrop-filter:blur(4px); }.email-modal { position:relative; width:min(620px,100%); max-height:min(78vh,700px); overflow:auto; padding:30px; border:1px solid rgba(255,255,255,.5); border-radius:18px; color:#102440; background:#fff; box-shadow:0 24px 70px rgba(0,0,0,.28); }.email-modal h2 { margin:0; padding-right:36px; }.email-modal-label { margin:0 0 7px; color:#a17b2d; font-size:11px; font-weight:800; letter-spacing:.12em; }.email-modal-body { margin:22px 0; white-space:pre-wrap; line-height:1.65; }.email-modal-close { position:absolute; top:14px; right:14px; width:34px; height:34px; border:0; border-radius:9px; color:#344a67; background:#edf3fa; font-size:24px; line-height:1; cursor:pointer; } @media (max-width:560px) { .email-card { grid-template-columns:1fr; }.email-card .btn { width:100%; }.email-modal { padding:24px 18px; } }
 .history-timeline { display:grid; gap:.75rem; max-width:880px; }.history-timeline article { display:grid; grid-template-columns:88px minmax(0,1fr) auto; gap:1rem; align-items:start; padding:1rem 1.1rem; border:1px solid #dbe5f0; border-radius:14px; background:rgba(255,255,255,.92); box-shadow:0 8px 22px rgba(18,53,89,.06); animation:history-in .32s ease both; }.history-timeline article>span { padding:.36rem .45rem; border-radius:7px; color:#80601b; background:#fff4d8; font-size:.72rem; font-weight:850; text-align:center; text-transform:uppercase; }.history-timeline article b { color:#092b51; }.history-timeline article p { margin:.3rem 0; color:#526b86; }.history-timeline article small { color:#8395aa; }.history-timeline article em { padding:.3rem .6rem; border-radius:99px; color:#0c4c86; background:#e6f1ff; font-size:.75rem; font-style:normal; font-weight:800; text-transform:capitalize; }.page-empty { padding:2rem; border-radius:14px; color:#657b92; background:#fff; text-align:center; }@keyframes history-in { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } } @media(max-width:720px){.settings-grid{grid-template-columns:1fr}.history-timeline article{grid-template-columns:1fr;gap:.55rem}.history-timeline article>span{width:max-content}.history-timeline article em{width:max-content}}
 
+.quick-links {
+  position: fixed; /* stays pinned while scrolling */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0.6rem 1rem calc(0.6rem + env(safe-area-inset-bottom));
+  background: #0b1e37; /* your dark blue */
+  border-top: 2px solid #c7952c; /* your gold */
+  box-shadow: 0 -7px 18px rgba(7, 26, 51, 0.2);
+}
+
 .quick-links a {
-  flex: 1; /* makes each button share equal width */
+  flex: 1; /* equal width fit */
   padding: 0.65rem 0.9rem; /* taller buttons */
-  color: #18304f;
-  background: #ffffff;
-  border: 1px solid #d5a52e;
+  color: #18304f; /* keep your text color */
+  background: #ffffff; /* keep your button background */
+  border: 1px solid #d5a52e; /* keep your border */
   border-radius: 8px;
   font-size: 0.9rem;
   line-height: 1.2;
@@ -204,16 +222,20 @@
   transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Hover effect */
+/* Hover animation */
 .quick-links a:hover {
-  background: #f6d36a;
+  background: #ffffff; /* keep same color */
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
 
-/* Click (active) effect */
+/* Click animation */
 .quick-links a:active {
   transform: scale(0.96);
-  background: #e6b94c;
+  background: #ffffff; /* same color */
   box-shadow: 0 3px 8px rgba(0,0,0,0.2) inset;
+}
+
+.page:has(.quick-links) {
+  padding-bottom: 5.2rem; /* extra space for taller bar */
 }
