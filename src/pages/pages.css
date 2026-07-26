@@ -190,3 +190,37 @@
 .setting-toggle input { inline-size: 1.2rem; block-size: 1.2rem; accent-color: #b58b35; }
 .email-card { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:12px; align-items:center; }.email-card .card-meta { grid-column:1 / -1; margin:0; }.email-preview { display:-webkit-box; margin:4px 0 0; overflow:hidden; -webkit-box-orient:vertical; -webkit-line-clamp:1; }.email-modal-backdrop { position:fixed; inset:0; z-index:2000; display:grid; place-items:center; padding:20px; background:rgba(5,22,45,.56); backdrop-filter:blur(4px); }.email-modal { position:relative; width:min(620px,100%); max-height:min(78vh,700px); overflow:auto; padding:30px; border:1px solid rgba(255,255,255,.5); border-radius:18px; color:#102440; background:#fff; box-shadow:0 24px 70px rgba(0,0,0,.28); }.email-modal h2 { margin:0; padding-right:36px; }.email-modal-label { margin:0 0 7px; color:#a17b2d; font-size:11px; font-weight:800; letter-spacing:.12em; }.email-modal-body { margin:22px 0; white-space:pre-wrap; line-height:1.65; }.email-modal-close { position:absolute; top:14px; right:14px; width:34px; height:34px; border:0; border-radius:9px; color:#344a67; background:#edf3fa; font-size:24px; line-height:1; cursor:pointer; } @media (max-width:560px) { .email-card { grid-template-columns:1fr; }.email-card .btn { width:100%; }.email-modal { padding:24px 18px; } }
 .history-timeline { display:grid; gap:.75rem; max-width:880px; }.history-timeline article { display:grid; grid-template-columns:88px minmax(0,1fr) auto; gap:1rem; align-items:start; padding:1rem 1.1rem; border:1px solid #dbe5f0; border-radius:14px; background:rgba(255,255,255,.92); box-shadow:0 8px 22px rgba(18,53,89,.06); animation:history-in .32s ease both; }.history-timeline article>span { padding:.36rem .45rem; border-radius:7px; color:#80601b; background:#fff4d8; font-size:.72rem; font-weight:850; text-align:center; text-transform:uppercase; }.history-timeline article b { color:#092b51; }.history-timeline article p { margin:.3rem 0; color:#526b86; }.history-timeline article small { color:#8395aa; }.history-timeline article em { padding:.3rem .6rem; border-radius:99px; color:#0c4c86; background:#e6f1ff; font-size:.75rem; font-style:normal; font-weight:800; text-transform:capitalize; }.page-empty { padding:2rem; border-radius:14px; color:#657b92; background:#fff; text-align:center; }@keyframes history-in { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } } @media(max-width:720px){.settings-grid{grid-template-columns:1fr}.history-timeline article{grid-template-columns:1fr;gap:.55rem}.history-timeline article>span{width:max-content}.history-timeline article em{width:max-content}}
+
+/* Keep Home quick links available while scrolling */
+.quick-links {
+  position: fixed;
+  z-index: 40;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.55rem;
+  overflow-x: auto;
+  padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom));
+  background: rgba(7, 26, 51, 0.97);
+  border-top: 2px solid #c7952c;
+  box-shadow: 0 -10px 24px rgba(7, 26, 51, 0.18);
+}
+
+.quick-links a {
+  flex: 0 0 auto;
+  color: #102440;
+  background: #ffffff;
+  border-color: #e5bd4b;
+  white-space: nowrap;
+}
+
+.quick-links a:hover {
+  background: #f5d36d;
+}
+
+/* Prevent Home content from being hidden under the fixed links */
+.page:has(.quick-links) {
+  padding-bottom: 6rem;
+}
