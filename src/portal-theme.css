@@ -41,6 +41,7 @@ body {
 .page {
   max-width: 1080px;
   padding: 2.5rem 1.5rem 4rem;
+  margin: 0 auto; /* keeps it centered on large screens */
 }
 
 .page h1 {
@@ -85,16 +86,10 @@ body {
   background: #fff;
 }
 
-.page {
-  max-width: 1080px;
-  padding: 2.5rem 1.5rem 4rem;
-  margin: 0 auto; /* keeps it centered on large screens */
-}
-
-/* Responsive adjustments for phones */
+/* ✅ Consolidated responsive adjustments */
 @media (max-width: 760px) {
   .page {
-    max-width: 100%;       /* take full width on phones */
+    max-width: 100%;       /* full width on phones */
     padding: 1rem;         /* reduce padding */
     margin: 0;             /* remove auto centering */
   }
@@ -115,18 +110,6 @@ body {
     padding: 10px 14px;
   }
 
-  .navbar-email {
-    display: none;
-  }
-}
-
-@media (max-width: 760px) {
-  .navbar {
-    padding: 10px 14px;
-  }
-  .page {
-    padding: 1.5rem 1rem 3rem;
-  }
   .navbar-email {
     display: none;
   }
