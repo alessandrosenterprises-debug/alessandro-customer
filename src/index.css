@@ -2,6 +2,15 @@
   color-scheme: light;
 }
 
+body {
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  background-color: #0a1a2f; /* dark navy blue */
+  color: #f9fafb;            /* light text */
+}
+
 #root {
   min-height: 100vh;
 }
