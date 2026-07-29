@@ -1,0 +1,18 @@
+import { useCallback, useEffect, useState, type FormEvent } from 'react';
+import { useAuth } from '../hooks/useAuth';
+import { useToast } from '../hooks/useToast';
+import { getCustomerEmails, createEmail } from '../services/emails';
+import { useRealtimeTable } from '../hooks/useRealtimeTable';
+import type { CustomerEmail } from '../types';
+import './pages.css';
+
+export function Emails() {
+  const { user } = useAuth(); const { showToast } = useToast();
+  const [emails, setEmails] = useState<CustomerEmail[]>([]); const [subject, setSubject] = useState(''); const [body, setBody] = useState('');
+  const [loading, setLoading] = useState(true); const [submitting, setSubmitting] = useState(false); const [error, setError] = useState<string | null>(null); const [openedEmail, setOpenedEmail] = useState<CustomerEmail | null>(null);
+  const loadEmails = useCallback(async () => { if (!user) return; const { data, error: loadError } = await getCustomerEmails(user.id); if (loadError) { console.error('Failed to load emails:', loadError); setError('Failed to load emails.'); } setEmails(data ?? []); setLoading(false); }, [user]);
+  useEffect(() => { void loadEmails(); }, [loadEmails]);
+  useRealtimeTable('emails', () => void loadEmails(), user ? `customer_id=eq.${user.id}` : undefined);
+  async function handleSubmit(event: FormEvent) { event.preventDefault(); if (!user) return; if (!subject.trim() || !body.trim()) { setError('Subject and body are required.'); return; } setSubmitting(true); setError(null); const { data, error: sendError } = await createEmail({ customer_id: user.id, subject, body }); setSubmitting(false); if (sendError) { setError('Failed to send email.'); return; } if (data) setEmails((current) => [data, ...current]); setSubject(''); setBody(''); showToast('success', 'Email sent', 'Your email has been recorded.'); }
+  return <div className="page"><h1>Emails</h1><form className="form" onSubmit={handleSubmit}><div className="form-group"><label htmlFor="subject">Subject</label><input id="subject" required value={subject} onChange={(event) => setSubject(event.target.value)} /></div><div className="form-group"><label htmlFor="body">Body</label><textarea id="body" required value={body} onChange={(event) => setBody(event.target.value)} /></div>{error && <div className="form-error">{error}</div>}<button className="btn" type="submit" disabled={submitting}>{submitting ? 'Sending...' : 'Send email'}</button></form><h2>Email History</h2>{loading && <div className="page-loading">Loading emails...</div>}{!loading && emails.length === 0 && <p className="page-empty">No emails yet.</p>}{emails.map((email) => <div className="card email-card" key={email.id}><div><h3>{email.subject}</h3><p className="email-preview">{email.body}</p></div><button className="btn btn-secondary" onClick={() => setOpenedEmail(email)}>Open</button><p className="card-meta">{new Date(email.sent_at).toLocaleString()} · {email.status}</p></div>)}{openedEmail && <div className="email-modal-backdrop" role="presentation" onClick={() => setOpenedEmail(null)}><article className="email-modal" role="dialog" aria-modal="true" aria-label={openedEmail.subject} onClick={(event) => event.stopPropagation()}><button className="email-modal-close" aria-label="Close email" onClick={() => setOpenedEmail(null)}>×</button><p className="email-modal-label">EMAIL</p><h2>{openedEmail.subject}</h2><p className="card-meta">{new Date(openedEmail.sent_at).toLocaleString()} · {openedEmail.status}</p><p className="email-modal-body">{openedEmail.body}</p><button className="btn" onClick={() => setOpenedEmail(null)}>Close</button></article></div>}</div>;
+}
