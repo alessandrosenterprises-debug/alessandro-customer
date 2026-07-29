@@ -40,28 +40,28 @@ body {
 }
 .card p, .settings-card p { color: #c0d1e4!important; }
 
-/* ✅ Top shortcut cards fix */
+/* ✅ Top shortcut cards */
 .home-shortcuts {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 per row on phones */
+  grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   margin: 14px 0;
   width: 100%;
 }
 @media (min-width: 768px) {
   .home-shortcuts {
-    grid-template-columns: repeat(4, 1fr); /* 4 per row on tablets/desktops */
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
-/* ✅ Bottom navigation bar fix */
+/* ✅ Bottom navigation bar */
 .quick-links {
   position: fixed;
   z-index: 100;
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100%;              /* stretch full width */
+  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -71,7 +71,7 @@ body {
   box-shadow: 0 -7px 18px rgba(7, 26, 51, 0.2);
 }
 .quick-links a {
-  flex: 1;                  /* equal width items */
+  flex: 1;
   text-align: center;
   padding: 0.42rem 0.78rem;
   color: #18304f;
@@ -84,79 +84,23 @@ body {
 }
 .quick-links a:hover { background: #f6d36a; }
 
-/* ✅ Latest updates cards fix */
+/* ✅ Latest updates cards */
 .post-grid {
-  display: grid!important;
-  grid-template-columns: 1fr!important; /* stack on phones */
-  gap: 16px!important;
-}
-@media (min-width: 768px) {
-  .post-grid {
-    grid-template-columns: repeat(2, 1fr)!important; /* 2 per row on tablets */
-  }
-}
-.post-card img {
-  width: 100%;
-  height: 180px!important;
-  object-fit: cover!important; /* same frame size */
-}
-.post-card h2 { margin: 0.5rem 0; font-size: 1rem; color: #f9fafb!important; }
-.post-card p { margin: 0.5rem 0; color: #dbe4ee!important; }
-
-/* ✅ Service gallery fix */
-.service-gallery img {
-  width: 100%;
-  height: 180px!important;
-  object-fit: cover!important;
-  border-radius: 10px!important;
-}
-
-/* ✅ Messages alignment fix */
-.messages-page { padding: 1rem; }
-.messages-page .form-group { margin-bottom: 1rem; }
-.messages-page .message-history { margin-top: 1.5rem; }
-.messages-page .message-history .message {
-  padding: 1rem;
-  border: 1px solid #cda445;
-  border-radius: 10px;
-  background: #102440;
-  color: #f9fafb;
-  margin-bottom: 1rem;
-}
-/* --- Fixes for circled issues --- */
-
-/* Top shortcut cards */
-.home-shortcuts {
-  width: 100%;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
-@media (min-width: 768px) {
-  .home-shortcuts {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* Bottom navigation bar */
-.quick-links {
-  left: 0;
-  right: 0;
-  width: 100%;
-  justify-content: space-around;
-}
-.quick-links a {
-  flex: 1;
-  text-align: center;
-}
-
-/* Latest updates cards */
-.post-grid {
+  display: grid;
   grid-template-columns: 1fr;
+  gap: 16px;
 }
 @media (min-width: 768px) {
   .post-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+.post-card {
+  overflow: hidden;
+  border: 1px solid #cda445;
+  border-radius: 12px;
+  background: linear-gradient(145deg,#0d3561,#082548);
+  color: #f9fafb;
 }
 .post-card img {
   width: 100%;
@@ -173,7 +117,7 @@ body {
   color: #dbe4ee;
 }
 
-/* Service gallery images */
+/* ✅ Service gallery images */
 .service-gallery img {
   width: 100%;
   height: 180px;
@@ -181,7 +125,7 @@ body {
   border-radius: 10px;
 }
 
-/* Messages alignment */
+/* ✅ Messages alignment */
 .messages-page { padding: 1rem; }
 .messages-page .form-group { margin-bottom: 1rem; }
 .messages-page .message-history { margin-top: 1.5rem; }
