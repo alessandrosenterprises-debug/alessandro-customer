@@ -1,81 +1,25 @@
-:root {
-  color: #0b1f3a;
-  background: #0a1a2f; /* dark navy blue */
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-}
-
-body {
-  margin: 0;
-  background-color: #0a1a2f; /* dark navy blue */
-  color: #f9fafb;            /* light text */
-}
-
-/* Navbar */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  padding: 12px 24px;
-  background: linear-gradient(105deg, #06172d, #0b315c 68%, #153f67);
-  border-bottom: 2px solid #cda445;
-  box-shadow: 0 8px 24px rgba(6, 23, 45, .18);
-}
-
-.navbar-link { font-weight: 700; transition: .2s ease; }
-.navbar-link.active { background: linear-gradient(135deg, #d8b35c, #b88a2b); color: #102440; }
-.navbar-link:hover { background: rgba(255, 255, 255, .15); }
-.navbar-logout { border-color: #cda445; }
-
-/* Page layout */
-.page {
-  width: 100%;              /* full width by default */
-  padding: 2rem 1.25rem 3rem;
-  margin: 0;
-}
-
-.page h1, h2, h3, h4, h5, h6 {
-  color: #f9fafb; /* bright white for contrast */
-}
-
-.page-subtitle {
-  color: #dbe4ee;
-  margin-bottom: 1.5rem;
-}
-
-/* Cards */
-.card, .form, .settings-card {
-  border: 1px solid #e0e8f1;
-  border-radius: 16px;
-  box-shadow: 0 10px 26px rgba(25, 50, 85, .06);
-  background: #102440; /* dark background for contrast */
-  color: #f9fafb;      /* light text inside cards */
-  padding: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-.card h3, .card p, .card small { color: #f9fafb; }
-
-/* Buttons */
-.btn {
-  border-radius: 9px;
-  background: linear-gradient(135deg, #d8b35c, #b88a2b);
-  color: #102440;
-  font-weight: 800;
-  padding: 0.6rem 1.1rem;
-}
-
-.btn-secondary {
-  color: #17395f;
-  background: #e7f0fb;
-}
-
-/* Page loading */
-.page-loading {
-  min-height: 150px;
+/* ✅ Top shortcut cards (Promotions, Bookings, Messages, Support) */
+.home-shortcuts {
   display: grid;
-  place-items: center;
-  border-radius: 16px;
-  background: #fff;
+  grid-template-columns: repeat(2, 1fr); /* 2 per row on phones */
+  gap: 12px;
+  margin: 14px 0;
+  width: 100%; /* stretch full width */
+}
+
+.home-shortcuts a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  border: 1px solid #cda445;
+  border-radius: 12px;
+  background: #102440;
+  color: #f9fafb;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 /* ✅ Bottom navigation bar */
@@ -85,63 +29,86 @@ body {
   bottom: 0;
   left: 0;
   right: 0;              /* stretch full width */
-  width: 100%;           /* force full width */
+  width: 100%;
   display: flex;
-  justify-content: space-around; /* evenly space items */
+  justify-content: space-around;
   align-items: center;
   padding: 0.6rem 0;
-  background: #0b1f3a;   /* navy background */
-  border-top: 2px solid #cda445; /* gold accent */
+  background: #0b1f3a;
+  border-top: 2px solid #cda445;
   box-shadow: 0 -4px 12px rgba(0,0,0,.25);
-  z-index: 200;          /* keep above content */
+  z-index: 200;
 }
 
 .bottom-nav a,
 .quick-links a {
-  flex: 1;               /* each item takes equal width */
+  flex: 1;
   text-align: center;
-  color: #f9fafb;        /* visible text */
-  font-size: 0.9rem;
+  color: #f9fafb;
+  font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
   padding: 0.5rem 0;
 }
 
-/* ✅ Responsive adjustments */
-@media (max-width: 760px) {
-  .page {
-    padding: 1rem;         /* reduce padding on phones */
-  }
+/* ✅ Latest Updates cards */
+.post-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* stack on phones */
+  gap: 16px;
+}
 
-  .card, .form, .settings-card {
-    width: 100%;           /* cards stretch full width */
-    margin-bottom: 1rem;
-  }
+.post-card {
+  overflow: hidden;
+  border: 1px solid #cda445;
+  border-radius: 12px;
+  background: #102440;
+  color: #f9fafb;
+}
 
-  h1, h2 {
-    font-size: 1.4rem;     /* scale down headings */
-    text-align: center;
-  }
+.post-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* keep same frame size */
+}
 
-  .navbar { padding: 10px 14px; }
+.post-card h2 {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #f9fafb;
+}
 
-  .bottom-nav,
-  .quick-links {
-    justify-content: space-between;
-    gap: 0.3rem;
-    overflow-x: auto;     /* allow scroll if too many items */
-    scrollbar-width: none;
-  }
+.post-card p {
+  margin: 0.5rem 0;
+  color: #dbe4ee;
+}
 
-  .bottom-nav::-webkit-scrollbar,
-  .quick-links::-webkit-scrollbar {
-    display: none;
-  }
+/* ✅ Service gallery images */
+.service-gallery img {
+  width: 100%;
+  height: 180px;       /* fixed frame height */
+  object-fit: cover;   /* all images same size */
+  border-radius: 10px;
+}
 
-  .bottom-nav a,
-  .quick-links a {
-    flex: 0 0 auto;       /* prevent items from shrinking too much */
-    font-size: 0.78rem;
-    padding: 0.4rem 0.5rem;
-  }
+/* ✅ Messages alignment */
+.messages-page {
+  padding: 1rem;
+}
+
+.messages-page .form-group {
+  margin-bottom: 1rem; /* spacing between Subject/Message fields */
+}
+
+.messages-page .message-history {
+  margin-top: 1.5rem;
+}
+
+.messages-page .message-history .message {
+  padding: 1rem;
+  border: 1px solid #cda445;
+  border-radius: 10px;
+  background: #102440;
+  color: #f9fafb;
+  margin-bottom: 1rem; /* spacing between messages */
 }
