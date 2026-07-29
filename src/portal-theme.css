@@ -10,12 +10,12 @@ body {
   color: #f9fafb;
 }
 
-/* Top navigation bar */
+/* Top navigation bar (global gradient only, detailed layout in Navbar.css) */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 100;
-  width: 100%; /* full width */
+  width: 100%;
   padding: 12px 24px;
   background: linear-gradient(105deg, #06172d, #0b315c 68%, #153f67);
   border-bottom: 2px solid #cda445;
@@ -120,33 +120,3 @@ body {
   color: #f9fafb;
   margin-bottom: 1rem;
 }
-
-/* ✅ Bottom navigation bar */
-.quick-links {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;              /* stretch full width */
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0.6rem 0;
-  background: linear-gradient(110deg, #03172f, #082d58 68%, #0b3b72); /* match top bar gradient */
-  border-top: 2px solid #c7952c;
-  box-shadow: 0 -7px 18px rgba(7, 26, 51, 0.2);
-  z-index: 200;
-}
-.quick-links a {
-  flex: 1;                  /* equal width items */
-  text-align: center;
-  padding: 0.42rem 0.78rem;
-  color: #18304f;
-  background: #ffffff;
-  border: 1px solid #d5a52e;
-  border-radius: 8px;
-  font-size: 0.82rem;
-  line-height: 1.15;
-  white-space: nowrap;
-}
-.quick-links a:hover { background: #f6d36a; }
