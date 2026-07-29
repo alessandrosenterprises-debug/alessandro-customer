@@ -33,8 +33,14 @@ body {
   margin: 0;
 }
 
-.page h1 { color: #f9fafb; letter-spacing: -.03em; margin-bottom: 0.25rem; }
-.page-subtitle { color: #dbe4ee; margin-bottom: 1.5rem; }
+.page h1, h2, h3, h4, h5, h6 {
+  color: #f9fafb; /* bright white for contrast */
+}
+
+.page-subtitle {
+  color: #dbe4ee;
+  margin-bottom: 1.5rem;
+}
 
 /* Cards */
 .card, .form, .settings-card {
