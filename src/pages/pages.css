@@ -79,26 +79,29 @@ body {
 }
 
 /* ✅ Bottom navigation bar */
+.bottom-nav,
 .quick-links {
   position: fixed;
-  z-index: 100;
   bottom: 0;
   left: 0;
-  right: 0;                /* stretch full width */
+  right: 0;              /* stretch full width */
+  width: 100%;           /* force full width */
   display: flex;
   justify-content: space-around; /* evenly space items */
   align-items: center;
   padding: 0.6rem 0;
-  background: #0b1f3a;     /* navy background */
+  background: #0b1f3a;   /* navy background */
   border-top: 2px solid #cda445; /* gold accent */
   box-shadow: 0 -4px 12px rgba(0,0,0,.25);
+  z-index: 200;          /* keep above content */
 }
 
+.bottom-nav a,
 .quick-links a {
-  flex: 1;                 /* each item takes equal width */
+  flex: 1;               /* each item takes equal width */
   text-align: center;
-  color: #f9fafb;          /* visible text */
-  font-size: 0.85rem;
+  color: #f9fafb;        /* visible text */
+  font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
   padding: 0.5rem 0;
@@ -122,18 +125,22 @@ body {
 
   .navbar { padding: 10px 14px; }
 
+  .bottom-nav,
   .quick-links {
-    flex-wrap: nowrap;
     justify-content: space-between;
     gap: 0.3rem;
-    overflow-x: auto;       /* allow horizontal scroll if needed */
+    overflow-x: auto;     /* allow scroll if too many items */
     scrollbar-width: none;
   }
 
-  .quick-links::-webkit-scrollbar { display: none; }
+  .bottom-nav::-webkit-scrollbar,
+  .quick-links::-webkit-scrollbar {
+    display: none;
+  }
 
+  .bottom-nav a,
   .quick-links a {
-    flex: 0 0 auto;         /* prevent items from shrinking too much */
+    flex: 0 0 auto;       /* prevent items from shrinking too much */
     font-size: 0.78rem;
     padding: 0.4rem 0.5rem;
   }
