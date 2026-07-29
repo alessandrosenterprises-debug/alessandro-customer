@@ -49,40 +49,33 @@ body {
   width: 100%;
 }
 @media (min-width: 768px) {
-  .home-shortcuts {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  .home-shortcuts { grid-template-columns: repeat(4, 1fr); }
 }
 
-/* ✅ Bottom navigation bar */
+/* ✅ Bottom navigation bar (mobile override only) */
 .quick-links {
   position: fixed;
-  z-index: 100;
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100%;
+  width: 100%;              /* stretch full width */
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 0.6rem 0;
-  background: #0b1e37;
-  border-top: 2px solid #c7952c;
-  box-shadow: 0 -7px 18px rgba(7, 26, 51, 0.2);
+  background: transparent;  /* let BottomNavigation.css handle gradient */
+  border-top: none;         /* avoid double borders */
+  box-shadow: none;         /* avoid duplicate shadows */
+  z-index: 100;
 }
 .quick-links a {
   flex: 1;
   text-align: center;
   padding: 0.42rem 0.78rem;
-  color: #18304f;
-  background: #ffffff;
-  border: 1px solid #d5a52e;
-  border-radius: 8px;
   font-size: 0.82rem;
   line-height: 1.15;
   white-space: nowrap;
 }
-.quick-links a:hover { background: #f6d36a; }
 
 /* ✅ Latest updates cards */
 .post-grid {
@@ -91,9 +84,10 @@ body {
   gap: 16px;
 }
 @media (min-width: 768px) {
-  .post-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .post-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .post-grid { grid-template-columns: repeat(3, 1fr); }
 }
 .post-card {
   overflow: hidden;
@@ -107,15 +101,8 @@ body {
   height: 180px;
   object-fit: cover;
 }
-.post-card h2 {
-  margin: 0.5rem 0;
-  font-size: 1rem;
-  color: #f9fafb;
-}
-.post-card p {
-  margin: 0.5rem 0;
-  color: #dbe4ee;
-}
+.post-card h2 { margin: 0.5rem 0; font-size: 1rem; color: #f9fafb; }
+.post-card p { margin: 0.5rem 0; color: #dbe4ee; }
 
 /* ✅ Service gallery images */
 .service-gallery img {
