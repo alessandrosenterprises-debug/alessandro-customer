@@ -1,82 +1,117 @@
-/* Top shortcut cards */
+:root {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #f7f9ff;
+  background: #03162f;
+}
+
+body {
+  min-width: 320px;
+  background: radial-gradient(circle at 92% 2%, #16427b 0, transparent 26rem),
+              linear-gradient(145deg, #020f25, #062c55 60%, #031a35);
+  color: #f7f9ff;
+}
+
+#root { min-height: 100vh; padding-bottom: 82px; }
+
+.page, .service-detail-page {
+  width: min(100%, 620px);
+  margin: 0 auto;
+  padding: 18px 16px 98px;
+  color: #f7f9ff;
+}
+
+/* Headings and subtitles */
+.page h1, .service-detail-page h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(27px, 8vw, 37px);
+  line-height: 1.05;
+  letter-spacing: -.04em;
+}
+.page h2, .service-detail-page h2 { color: #fff; }
+.page-subtitle { margin: 8px 0 21px; color: #b7c7dc; font-size: 13px; line-height: 1.55; }
+
+/* Cards */
+.card, .form, .settings-card {
+  border: 1px solid rgba(134,177,221,.16)!important;
+  color: #f2f7ff!important;
+  background: linear-gradient(145deg,#0d3561,#082548)!important;
+  box-shadow: 0 10px 25px rgba(0,0,0,.2)!important;
+}
+.card p, .settings-card p { color: #c0d1e4!important; }
+
+/* ✅ Top shortcut cards fix */
 .home-shortcuts {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* 2 per row on phones */
   gap: 12px;
   margin: 14px 0;
   width: 100%;
 }
-.home-shortcuts a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100px;
-  border: 1px solid #cda445;
-  border-radius: 12px;
-  background: #102440;
-  color: #f9fafb;
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-decoration: none;
+@media (min-width: 768px) {
+  .home-shortcuts {
+    grid-template-columns: repeat(4, 1fr); /* 4 per row on tablets/desktops */
+  }
 }
 
-/* Bottom nav bar */
+/* ✅ Bottom navigation bar fix */
 .quick-links {
   position: fixed;
+  z-index: 100;
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100%;
+  width: 100%;              /* stretch full width */
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 0.6rem 0;
-  background: #0b1f3a;
-  border-top: 2px solid #cda445;
-  box-shadow: 0 -4px 12px rgba(0,0,0,.25);
-  z-index: 200;
+  background: #0b1e37;
+  border-top: 2px solid #c7952c;
+  box-shadow: 0 -7px 18px rgba(7, 26, 51, 0.2);
 }
 .quick-links a {
-  flex: 1;
+  flex: 1;                  /* equal width items */
   text-align: center;
-  color: #f9fafb;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 0.5rem 0;
+  padding: 0.42rem 0.78rem;
+  color: #18304f;
+  background: #ffffff;
+  border: 1px solid #d5a52e;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  line-height: 1.15;
+  white-space: nowrap;
 }
+.quick-links a:hover { background: #f6d36a; }
 
-/* Latest updates cards */
+/* ✅ Latest updates cards fix */
 .post-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
+  display: grid!important;
+  grid-template-columns: 1fr!important; /* stack on phones */
+  gap: 16px!important;
 }
-.post-card {
-  overflow: hidden;
-  border: 1px solid #cda445;
-  border-radius: 12px;
-  background: #102440;
-  color: #f9fafb;
+@media (min-width: 768px) {
+  .post-grid {
+    grid-template-columns: repeat(2, 1fr)!important; /* 2 per row on tablets */
+  }
 }
 .post-card img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  height: 180px!important;
+  object-fit: cover!important; /* same frame size */
 }
-.post-card h2 { margin: 0.5rem 0; font-size: 1rem; color: #f9fafb; }
-.post-card p { margin: 0.5rem 0; color: #dbe4ee; }
+.post-card h2 { margin: 0.5rem 0; font-size: 1rem; color: #f9fafb!important; }
+.post-card p { margin: 0.5rem 0; color: #dbe4ee!important; }
 
-/* Service gallery */
+/* ✅ Service gallery fix */
 .service-gallery img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
+  height: 180px!important;
+  object-fit: cover!important;
+  border-radius: 10px!important;
 }
 
-/* Messages alignment */
+/* ✅ Messages alignment fix */
 .messages-page { padding: 1rem; }
 .messages-page .form-group { margin-bottom: 1rem; }
 .messages-page .message-history { margin-top: 1.5rem; }
@@ -88,58 +123,3 @@
   color: #f9fafb;
   margin-bottom: 1rem;
 }
-
-/* Fix top shortcut cards */
-.home-shortcuts {
-  width: 100%;
-  grid-template-columns: repeat(2, 1fr); /* 2 per row on phones */
-  gap: 12px;
-}
-@media (min-width: 768px) {
-  .home-shortcuts {
-    grid-template-columns: repeat(4, 1fr); /* 4 per row on tablets/desktops */
-  }
-}
-
-/* Fix bottom navigation bar */
-.quick-links {
-  left: 0;
-  right: 0;
-  width: 100%;              /* stretch full width */
-  justify-content: space-around;
-}
-.quick-links a {
-  flex: 1;                  /* equal width items */
-  text-align: center;
-}
-
-/* Fix latest updates cards */
-.post-grid {
-  grid-template-columns: 1fr; /* stack on phones */
-}
-@media (min-width: 768px) {
-  .post-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
-  }
-}
-.post-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;         /* same frame size */
-}
-
-/* Fix service gallery images */
-.service-gallery img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-/* Fix messages alignment */
-.messages-page .form-group {
-  margin-bottom: 1rem;
-}
-.messages-page .message-history .message {
-  margin-bottom: 1rem;
-                                }
