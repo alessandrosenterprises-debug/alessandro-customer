@@ -39,9 +39,9 @@ body {
 }
 
 .page {
-  max-width: 1080px;
+  width: 100%;              /* full width by default */
   padding: 2.5rem 1.5rem 4rem;
-  margin: 0 auto; /* keeps it centered on large screens */
+  margin: 0;                /* no auto centering on mobile */
 }
 
 .page h1 {
@@ -86,31 +86,11 @@ body {
   background: #fff;
 }
 
-/* ✅ Consolidated responsive adjustments */
-@media (max-width: 760px) {
+/* ✅ Desktop adjustments */
+@media (min-width: 760px) {
   .page {
-    max-width: 100%;       /* full width on phones */
-    padding: 1rem;         /* reduce padding */
-    margin: 0;             /* remove auto centering */
-  }
-
-  .card,
-  .form,
-  .settings-card {
-    width: 100%;           /* cards stretch full width */
-    margin-bottom: 1rem;   /* spacing between cards */
-  }
-
-  h1, h2 {
-    font-size: 1.4rem;     /* scale down headings */
-    text-align: center;    /* keep headings neat */
-  }
-
-  .navbar {
-    padding: 10px 14px;
-  }
-
-  .navbar-email {
-    display: none;
+    max-width: 1080px;      /* center on larger screens */
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
   }
 }
