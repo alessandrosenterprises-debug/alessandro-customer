@@ -7,79 +7,70 @@
 html, body, #root {
   width: 100%;
   min-width: 320px;
-  max-width: 100%;   /* ensure full stretch */
+  max-width: 100%;             /* auto adopt to screen */
   min-height: 100%;
-  margin: 0 auto;    /* center on large screens */
-  background: #03162f;
-}
-
-body {
-  overflow-x: hidden;
-  background: radial-gradient(circle at 92% 2%, #16427b 0, transparent 26rem),
-              linear-gradient(145deg, #020f25, #062c55 60%, #031a35);
-  color: #f7f9ff;
-}
-
-#root {
-  min-height: 100vh;
-  padding-bottom: 82px;
+  margin: 0;
 }
 
 .page, .service-detail-page {
   width: 100%;
-  max-width: 1920px; /* fits laptop screens */
+  max-width: clamp(320px, 100dvw, 2560px); /* scales with DPI/screen size */
   margin: 0;
   padding: clamp(16px, 3vw, 34px) clamp(16px, 4vw, 56px) max(98px, calc(82px + env(safe-area-inset-bottom)));
   color: #f7f9ff;
 }
 
-.page h1, .service-detail-page h1 {
+/* Headings */
+.page h1, .service-detail-page h1,
+.home-hero h1 {
   margin: 0;
   color: #fff !important;
-  font-size: clamp(32px, 5vw, 48px); /* bigger headings */
+  font-size: clamp(32px, 5vw, 52px);
   line-height: 1.1;
   letter-spacing: -0.04em;
 }
 
-.page h2, .service-detail-page h2 {
+.page h2, .service-detail-page h2,
+.section-title-row h2,
+.service-gallery h2, .service-includes h2, .business-services-card h2 {
   color: #fff !important;
-  font-size: clamp(22px, 4vw, 28px);
+  font-size: clamp(20px, 3.5vw, 28px);
 }
 
+/* Paragraphs & Lists */
 .page p, .page li,
-.service-detail-page p, .service-detail-page li {
+.service-detail-page p, .service-detail-page li,
+.home-hero p, .promotion-spotlight p,
+.home-service-row p, .business-services-card p {
   color: #e2ecf8 !important;
-  font-size: clamp(14px, 1.6vw, 18px); /* readable body text */
+  font-size: clamp(14px, 1.6vw, 18px);
   line-height: 1.6;
 }
 
-.page-subtitle {
-  margin: 8px 0 21px;
-  color: #d7e5f4 !important;
-  font-size: clamp(13px, 1.4vw, 15px);
+/* Subtitles & Small Text */
+.page-subtitle, .promotion-tag, .promotion-spotlight small,
+.home-service-row small, .post-grid-compact small,
+.service-detail-hero strong, .gallery-placeholder span {
+  font-size: clamp(12px, 1.4vw, 14px);
+  line-height: 1.4;
+}
+
+/* Buttons */
+.btn, .btn-secondary,
+.service-card-actions .btn {
+  font-size: clamp(12px, 1.6vw, 14px);
+  font-weight: 700;
+}
+
+/* Cards */
+.card p, .settings-card p,
+.service-catalogue .card>p {
+  font-size: clamp(13px, 1.6vw, 16px);
   line-height: 1.55;
 }
 
-.home-hero p {
-  margin: 0;
-  color: #e2ecf8 !important;
-  font-size: clamp(14px, 2vw, 16px);
-}
-
-.home-hero h1 {
-  margin: 3px 0 6px;
-  font-size: clamp(32px, 6vw, 46px);
-}
-
-.home-service-row h3 {
-  margin: 0 0 3px;
-  color: #fff !important;
-  font-size: clamp(13px, 2.8vw, 16px);
-}
-
-.home-service-row p {
-  margin: 0;
-  color: #e2ecf8 !important;
-  font-size: clamp(12px, 1.8vw, 14px);
-  line-height: 1.5;
+/* Promotion Discount */
+.promotion-discount {
+  font-size: clamp(28px, 6vw, 40px);
+  line-height: 1.1;
 }
