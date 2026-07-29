@@ -46,8 +46,8 @@ body {
 .home-hero h1 {
   margin: 0;
   color: #fff !important;
-  font-size: clamp(32px, 5vw, 52px);
-  line-height: 1.1;
+  font-size: clamp(36px, 6vw, 60px); /* bigger headings */
+  line-height: 1.15;
   letter-spacing: -0.04em;
 }
 
@@ -55,7 +55,7 @@ body {
 .section-title-row h2,
 .service-gallery h2, .service-includes h2, .business-services-card h2 {
   color: #fff !important;
-  font-size: clamp(20px, 3.5vw, 28px);
+  font-size: clamp(24px, 4vw, 32px); /* larger subheadings */
 }
 
 .page p, .page li,
@@ -63,15 +63,15 @@ body {
 .home-hero p, .promotion-spotlight p,
 .home-service-row p, .business-services-card p {
   color: #e2ecf8 !important;
-  font-size: clamp(14px, 1.6vw, 18px);
-  line-height: 1.6;
+  font-size: clamp(16px, 1.8vw, 20px); /* larger body text */
+  line-height: 1.7;
 }
 
 .page-subtitle, .promotion-tag, .promotion-spotlight small,
 .home-service-row small, .post-grid-compact small,
 .service-detail-hero strong, .gallery-placeholder span {
-  font-size: clamp(12px, 1.4vw, 14px);
-  line-height: 1.4;
+  font-size: clamp(14px, 1.6vw, 16px); /* slightly larger small text */
+  line-height: 1.5;
 }
 
 /* ===========================
@@ -79,7 +79,7 @@ body {
    =========================== */
 .btn, .btn-secondary,
 .service-card-actions .btn {
-  font-size: clamp(12px, 1.6vw, 14px);
+  font-size: clamp(14px, 1.8vw, 16px); /* bigger button text */
   font-weight: 700;
 }
 
@@ -88,15 +88,15 @@ body {
    =========================== */
 .card p, .settings-card p,
 .service-catalogue .card>p {
-  font-size: clamp(13px, 1.6vw, 16px);
-  line-height: 1.55;
+  font-size: clamp(15px, 1.8vw, 18px); /* larger card text */
+  line-height: 1.6;
 }
 
 /* ===========================
    Promotions
    =========================== */
 .promotion-discount {
-  font-size: clamp(28px, 6vw, 40px);
+  font-size: clamp(32px, 7vw, 44px); /* larger promo highlight */
   line-height: 1.1;
 }
 
