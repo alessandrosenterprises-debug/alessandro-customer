@@ -21,15 +21,16 @@
   box-sizing: border-box !important;
 }
 
-/* === Strong text color overrides to full black === */
+/* === Strong text color overrides to full white === */
 .home-hero p,
 .home-hero h1 {
-  color: #000000 !important;   /* pure black for hero text */
+  color: #ffffff !important;   /* pure white for hero text */
 }
 
 .home-shortcuts a {
-  color: #000000 !important;   /* black labels inside buttons */
+  color: #ffffff !important;   /* white labels inside buttons */
 }
+
 
 .home-shortcuts a span {
   color: #000000 !important;   /* black icons */
