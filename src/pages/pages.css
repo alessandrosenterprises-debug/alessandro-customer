@@ -282,15 +282,7 @@
 .home-shortcuts a span {
   color: #ffd84d !important;   /* gold icons for better contrast */
 }
-/* === Strong text color overrides === */
-.home-hero p,
-.home-hero h3 {
-  color: #ffffff !important;   /* pure white for clarity */
-}
 
-.home-shortcuts a {
-  color: #fefefe !important;   /* bright text inside buttons */
-}
 
 .home-shortcuts a span {
   color: #ffd84d !important;   /* gold icons for better contrast */
