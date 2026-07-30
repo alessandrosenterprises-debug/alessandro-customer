@@ -101,27 +101,24 @@
   color: #000000 !important;        /* date text in black */
   font-weight: 700 !important;
 }
-
-/* Text overrides */
 .post-card h2 {
   margin: 0 !important;
-  font-size: 20px !important;       /* larger heading */
-  color: #000000 !important;        /* headings in black */
+  font-size: 20px !important;
+  color: #ffffff !important;   /* headings in white */
 }
 
 .post-card p {
-  font-size: 16px !important;       /* larger body text */
-  color: #000000 !important;        /* body text in black */
+  font-size: 16px !important;
+  color: #ffffff !important;   /* body text in white */
   line-height: 1.6 !important;
 }
 
 .post-card small {
-  font-size: 13px !important;       /* larger date text */
-  color: #000000 !important;        /* date text in black */
+  font-size: 13px !important;
+  color: #ffffff !important;   /* date text in white */
   font-weight: 700 !important;
 }
 
-  
 .form-group {
   display: flex;
   flex-direction: column;
