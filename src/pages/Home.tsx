@@ -8,6 +8,8 @@ import { useRealtimeTable } from '../hooks/useRealtimeTable';
 import { SharedPostFeed } from '../components/SharedPostFeed';
 import type { Customer, Promotion, Service } from '../types';
 import './pages.css';
+import "./home.css";
+
 
 export function Home() {
   const { user } = useAuth();
