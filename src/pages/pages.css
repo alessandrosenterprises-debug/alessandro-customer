@@ -61,7 +61,7 @@
   overflow: hidden !important;
   border: 1px solid #dde6f0 !important;
   border-radius: 15px !important;
-  background: #ffd700 !important;   /* gold background frame */
+  background: #c9a227 !important;   /* enterprise gold background frame */
   box-shadow: 0 8px 20px rgba(13,45,79,.06) !important;
   display: flex !important;
   flex-direction: column !important;
@@ -81,6 +81,25 @@
   flex-direction: column !important;
   gap: 10px !important;
   height: auto !important;          /* text expands naturally */
+}
+
+/* Text overrides */
+.post-card h2 {
+  margin: 0 !important;
+  font-size: 20px !important;       /* larger heading */
+  color: #000000 !important;        /* headings in black */
+}
+
+.post-card p {
+  font-size: 16px !important;       /* larger body text */
+  color: #000000 !important;        /* body text in black */
+  line-height: 1.6 !important;
+}
+
+.post-card small {
+  font-size: 13px !important;       /* larger date text */
+  color: #000000 !important;        /* date text in black */
+  font-weight: 700 !important;
 }
 
 /* Text overrides */
