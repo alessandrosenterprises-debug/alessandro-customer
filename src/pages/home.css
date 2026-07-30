@@ -17,3 +17,21 @@
   font-weight: 700;
   text-decoration: none;
 }
+.home-shortcuts {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+  gap: 14px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+.home-shortcuts a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1rem !important;
+  border-radius: 12px !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
