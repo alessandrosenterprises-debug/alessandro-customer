@@ -56,16 +56,7 @@
   max-width: 480px;
 }
 .profile-photo { display:flex; align-items:center; gap:16px; padding:15px; border:1px solid #e1e8f1; border-radius:14px; background:#fff; }.profile-photo img { width:76px; height:76px; border-radius:50%; object-fit:cover; background:#eef3f8; }.profile-photo b,.profile-photo p { display:block; margin:0; }.profile-photo p { margin:4px 0 10px; color:#65768a; font-size:12px; }.profile-photo .btn { display:inline-block; text-decoration:none; cursor:pointer; }
-/* === Post grid + post card with square image, white frame, black text === */
-.post-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
-  gap: 16px !important;
-  width: 100% !important;
-  margin: 0 auto !important;
-  max-width: 1200px !important;
-}
-
+/* === Post card with square image + white frame + black text === */
 .post-card {
   overflow: hidden !important;
   border: 1px solid #dde6f0 !important;
@@ -88,28 +79,29 @@
   padding: 16px !important;
   display: flex !important;
   flex-direction: column !important;
-  gap: 8px !important;
+  gap: 10px !important;
   height: auto !important;          /* text expands naturally */
 }
 
 /* Text overrides */
 .post-card h2 {
   margin: 0 !important;
-  font-size: 15px !important;
+  font-size: 20px !important;       /* larger heading */
   color: #000000 !important;        /* headings in black */
 }
 
 .post-card p {
-  font-size: 13px !important;
+  font-size: 16px !important;       /* larger body text */
   color: #000000 !important;        /* body text in black */
-  line-height: 1.45 !important;
+  line-height: 1.6 !important;
 }
 
 .post-card small {
-  font-size: 11px !important;
+  font-size: 13px !important;       /* larger date text */
   color: #000000 !important;        /* date text in black */
   font-weight: 700 !important;
 }
+
   
 .form-group {
   display: flex;
