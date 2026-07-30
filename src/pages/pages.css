@@ -102,22 +102,18 @@
   font-weight: 700 !important;
 }
 .post-card h2 {
-  margin: 0 !important;
-  font-size: 20px !important;
-  color: #ffffff !important;   /* headings in white */
+  color: #ffffff !important;
 }
 
 .post-card p {
-  font-size: 16px !important;
-  color: #ffffff !important;   /* body text in white */
-  line-height: 1.6 !important;
+  color: #ffffff !important;
 }
 
 .post-card small {
-  font-size: 13px !important;
-  color: #ffffff !important;   /* date text in white */
-  font-weight: 700 !important;
+  color: #ffffff !important;
 }
+
+
 
 .form-group {
   display: flex;
