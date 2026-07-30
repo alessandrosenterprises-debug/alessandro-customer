@@ -20,18 +20,19 @@
   text-decoration: none !important;
   box-sizing: border-box !important;
 }
-/* === Strong text color overrides === */
+
+/* === Strong text color overrides to full black === */
 .home-hero p,
 .home-hero h1 {
-  color: #ffffff !important;   /* pure white for clarity */
+  color: #000000 !important;   /* pure black for hero text */
 }
 
 .home-shortcuts a {
-  color: #ffffff !important;   /* bright text inside buttons */
+  color: #000000 !important;   /* black labels inside buttons */
 }
 
 .home-shortcuts a span {
-  color: #ffd84d !important;   /* gold icons for contrast */
+  color: #000000 !important;   /* black icons */
 }
 
 /* Service cards text */
@@ -39,7 +40,12 @@
 .service-detail-hero p,
 .service-includes li,
 .post-card p {
-  color: #fefefe !important;   /* brighter body text */
+  color: #000000 !important;   /* black body text */
+}
+
+.post-card h2,
+.service-detail-hero h1 {
+  color: #000000 !important;   /* black headings */
 }
 
 .post-card h2,
