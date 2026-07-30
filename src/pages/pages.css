@@ -56,12 +56,12 @@
   max-width: 480px;
 }
 .profile-photo { display:flex; align-items:center; gap:16px; padding:15px; border:1px solid #e1e8f1; border-radius:14px; background:#fff; }.profile-photo img { width:76px; height:76px; border-radius:50%; object-fit:cover; background:#eef3f8; }.profile-photo b,.profile-photo p { display:block; margin:0; }.profile-photo p { margin:4px 0 10px; color:#65768a; font-size:12px; }.profile-photo .btn { display:inline-block; text-decoration:none; cursor:pointer; }
-/* === Post card with square image + white frame + black text === */
+/* === Post card with square image + gold frame + black text === */
 .post-card {
   overflow: hidden !important;
   border: 1px solid #dde6f0 !important;
   border-radius: 15px !important;
-  background: #ffffff !important;   /* white background frame */
+  background: #ffd700 !important;   /* gold background frame */
   box-shadow: 0 8px 20px rgba(13,45,79,.06) !important;
   display: flex !important;
   flex-direction: column !important;
