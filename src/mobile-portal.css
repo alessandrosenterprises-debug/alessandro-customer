@@ -91,13 +91,12 @@ body {
 
 .home-hero p {
   margin: 0;
-  color: #ffffff !important;   /* pure white */
+  color: #b8c9dd;
   font-size: clamp(12px, 2.8vw, 13px);
 }
 
 .home-hero h1 {
   margin: 3px 0 6px;
-  color: #ffffff !important;   /* pure white */
   font-size: clamp(27px, 7vw, 37px);
 }
 
@@ -109,7 +108,7 @@ body {
   padding: 8px 4px;
   border: 1px solid rgba(150,189,231,.16);
   border-radius: 10px;
-  color: #ffffff !important;   /* pure white labels */
+  color: #fff;
   background: linear-gradient(145deg, #123d70, #08274e);
   font-size: clamp(9px, 2.25vw, 11px);
   font-weight: 800;
@@ -122,17 +121,40 @@ body {
   width: clamp(29px, 8vw, 38px);
   height: clamp(29px, 8vw, 38px);
   border-radius: 9px;
-  color: #ffffff !important;   /* pure white icon text */
+  color: #fff;
   background: linear-gradient(145deg, #4972ed, #5c49cb);
   font-size: 17px;
   box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
 
 /* Home Service Row */
-.home-service-row h3,
-.home-service-row p,
+.home-service-row h3 {
+  margin: 0 0 3px;
+  color: #fff;
+  font-size: clamp(11px, 3vw, 14px);
+}
+
+.home-service-row p {
+  display: -webkit-box;
+  margin: 0;
+  color: #b8cadd;
+  font-size: clamp(9px, 2.4vw, 10px);
+  line-height: 1.35;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.home-service-row small {
+  color: #efc456;
+  font-size: 9px;
+  font-weight: 850;
+}
+
 .home-service-row b {
-  color: #ffffff !important;   /* pure white text */
+  color: #d2e0ee;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 /* Service Detail Hero */
@@ -143,20 +165,19 @@ body {
   padding: 20px;
   border: 1px solid rgba(225,182,73,.7) !important;
   border-radius: 15px !important;
-  color: #ffffff !important;   /* pure white */
+  color: #fffff;
   background: radial-gradient(circle at 100% 4%, rgba(220,177,66,.24), transparent 12rem),
               linear-gradient(145deg, #0b315e, #051a37) !important;
 }
 
 .service-detail-hero h1 {
   margin: 8px 0 10px;
-  color: #ffffff !important;   /* pure white heading */
   font-size: 29px;
 }
 
 .service-detail-hero p {
   margin: 0;
-  color: #ffffff !important;   /* pure white paragraph */
+  color: #d5e1ed !important;
   font-size: 12px;
   line-height: 1.58;
   white-space: pre-line;
@@ -165,6 +186,6 @@ body {
 .service-detail-hero strong {
   display: block;
   margin: 12px 0 0;
-  color: #ffffff !important;   /* pure white strong text */
+  color: #f1cb62;
   font-size: 12px;
 }
