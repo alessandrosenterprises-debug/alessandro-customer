@@ -56,7 +56,6 @@
   max-width: 480px;
 }
 .profile-photo { display:flex; align-items:center; gap:16px; padding:15px; border:1px solid #e1e8f1; border-radius:14px; background:#fff; }.profile-photo img { width:76px; height:76px; border-radius:50%; object-fit:cover; background:#eef3f8; }.profile-photo b,.profile-photo p { display:block; margin:0; }.profile-photo p { margin:4px 0 10px; color:#65768a; font-size:12px; }.profile-photo .btn { display:inline-block; text-decoration:none; cursor:pointer; }
-/* === Post card with square image + white frame + white text === */
 /* === Post grid + post card with square image, white frame, white text === */
 .post-grid {
   display: grid !important;
