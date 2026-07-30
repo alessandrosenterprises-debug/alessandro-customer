@@ -1,28 +1,12 @@
-/* === Overrides for home-shortcuts === */
-.home-shortcuts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* stretch evenly */
-  gap: 14px;
-  width: 100%;              /* full width across container */
-  margin: 0 auto;           /* center within page */
-}
-
-.home-shortcuts a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  border-radius: 12px;
-  font-size: 1.05rem;       /* increased font size */
-  font-weight: 700;
-  text-decoration: none;
-}
+/* === Strong replacement for home-shortcuts === */
 .home-shortcuts {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
-  gap: 14px !important;
-  width: 100% !important;
-  margin: 0 auto !important;
+  grid-template-columns: repeat(4, 1fr) !important; /* 4 equal columns */
+  gap: 18px !important;                             /* spacing between buttons */
+  width: 100% !important;                           /* stretch full width */
+  margin: 0 auto !important;                        /* center within page */
+  max-width: 1080px !important;                     /* optional limit on very large screens */
+  padding: 0 1rem !important;                       /* respect page margins */
 }
 
 .home-shortcuts a {
@@ -34,4 +18,5 @@
   font-size: 1.05rem !important;
   font-weight: 700 !important;
   text-decoration: none !important;
+  box-sizing: border-box !important;
 }
