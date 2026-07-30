@@ -1,0 +1,19 @@
+/* === Overrides for home-shortcuts === */
+.home-shortcuts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* stretch evenly */
+  gap: 14px;
+  width: 100%;              /* full width across container */
+  margin: 0 auto;           /* center within page */
+}
+
+.home-shortcuts a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 1.05rem;       /* increased font size */
+  font-weight: 700;
+  text-decoration: none;
+}
