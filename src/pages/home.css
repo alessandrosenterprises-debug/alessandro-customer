@@ -56,14 +56,18 @@
 
 .header {
   display: flex;
-  justify-content: space-between; /* logo left, profile right */
+  justify-content: space-between; /* logo stays left, profile stays right */
   align-items: center;
 }
 
 .header .logo {
-  flex: 1;  /* logo stretches to cover left space */
+  flex: 1; /* logo expands to cover left space */
 }
 
 .portal-menu-trigger {
   display: none !important; /* hide the hamburger menu */
+}
+
+.portal-avatar-button {
+  margin-left: auto; /* force profile icon to the far right */
 }
