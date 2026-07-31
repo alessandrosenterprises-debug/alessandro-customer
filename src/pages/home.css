@@ -53,15 +53,12 @@
 .service-detail-hero h1 {
   color: #ffffff !important;   /* headings stand out */
 
-  .portal-menu-trigger {
+.portal-menu-trigger {
   display: none !important;
 }
 
-}
-.header {
-  display: flex;
-  justify-content: space-between; /* logo left, profile right */
-  align-items: center;
+.header .logo {
+  flex: 1 !important;   /* logo stretches to fill the space */
 }
 
 .header .logo {
