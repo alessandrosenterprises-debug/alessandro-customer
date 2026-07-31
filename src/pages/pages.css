@@ -331,21 +331,21 @@
 .email-card h2 {
   font-size: 1.25rem;   /* bump heading size */
 }
-/* === Strong text color overrides === */
-.home-hero p,
-.home-hero h1 {
-  color: #ffffff !important;   /* pure white for clarity */
+.header {
+  display: flex;
+  justify-content: space-between; /* logo stays left, profile stays right */
+  align-items: center;
 }
 
-.home-shortcuts a {
-  color: #fefefe !important;   /* bright text inside buttons */
+.header .logo {
+  flex: 1; /* logo expands to cover left space */
 }
 
-.home-shortcuts a span {
-  color: #ffd84d !important;   /* gold icons for better contrast */
+.portal-menu-trigger {
+  display: none !important; /* hide the hamburger menu */
 }
 
-
-.home-shortcuts a span {
-  color: #ffd84d !important;   /* gold icons for better contrast */
+.portal-avatar-button {
+  margin-left: auto; /* force profile icon to the far right */
 }
+
