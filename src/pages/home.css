@@ -60,6 +60,10 @@
   align-items: center;
 }
 
+.portal-menu-trigger {
+  display: none !important; /* hide the hamburger menu */
+}
+
 .header-right {
   display: flex;
   align-items: center;
