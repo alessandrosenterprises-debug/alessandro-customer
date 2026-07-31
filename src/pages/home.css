@@ -57,7 +57,7 @@
 .header {
   display: flex;
   justify-content: space-between; /* logo left, notification+profile right */
-  align-items: center;
+  align-items: right;
 }
 
 .portal-menu-trigger {
