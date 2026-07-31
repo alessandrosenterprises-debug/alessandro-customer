@@ -56,18 +56,20 @@
 
 .header {
   display: flex;
-  justify-content: space-between; /* logo stays left, profile stays right */
+  justify-content: space-between; /* logo left, notification+profile right */
   align-items: center;
 }
 
-.header .logo {
-  flex: 1; /* logo expands to cover left space */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* space between bell and profile */
 }
 
-.portal-menu-trigger {
-  display: none !important; /* hide the hamburger menu */
+.customer-notification {
+  order: 1; /* bell first */
 }
 
 .portal-avatar-button {
-  margin-left: auto; /* force profile icon to the far right */
+  order: 2; /* profile after bell */
 }
