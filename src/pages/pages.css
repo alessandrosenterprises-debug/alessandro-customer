@@ -60,6 +60,24 @@
   background: transparent !important;
   box-shadow: none !important;
 }
+.form {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2rem !important;
+  max-width: 720px !important;
+
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
 
 
 .profile-photo { display:flex; align-items:center; gap:16px; padding:15px; border:1px solid #e1e8f1; border-radius:14px; background:#fff; }.profile-photo img { width:76px; height:76px; border-radius:50%; object-fit:cover; background:#eef3f8; }.profile-photo b,.profile-photo p { display:block; margin:0; }.profile-photo p { margin:4px 0 10px; color:#65768a; font-size:12px; }.profile-photo .btn { display:inline-block; text-decoration:none; cursor:pointer; }
