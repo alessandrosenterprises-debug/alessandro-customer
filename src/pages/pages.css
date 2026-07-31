@@ -333,7 +333,7 @@
 }
 .header {
   display: flex;
-  justify-content: space-between; /* logo stays left, profile stays right */
+  justify-content: space-between; /* logo stays left, profile+bell stay right */
   align-items: center;
 }
 
@@ -346,9 +346,11 @@
 }
 
 .portal-avatar-button {
-  margin-left: auto; /* force profile icon to the far right */
+  margin-left: auto !important; /* force profile icon to the far right */
 }
 
 .customer-bell {
-  margin-left: auto; /* move notification bell next to profile icon */
+  margin-left: auto !important; /* force notification bell next to profile */
+}
+
 }
