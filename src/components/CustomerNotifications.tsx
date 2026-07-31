@@ -26,11 +26,36 @@ export function CustomerNotifications() {
     await supabase.from('customer_notifications').update({ read_at: new Date().toISOString() }).eq('id', item.id).eq('customer_id', user.id);
     void load();
   }
-  return <div className="customer-notification">
-    <button className="customer-bell" aria-label="Customer notifications" onClick={() => setOpen((value) => !value)}>{'\u2661'}{unread > 0 && <i>{unread}</i>}</button>
-    {open && <div className="customer-notice-menu"><div><b>Notifications</b>{unread > 0 && <span>{unread} new</span>}</div>
-      {items.map((item) => <button key={item.id} className={item.read_at ? '' : 'unread'} onClick={() => void markRead(item)}><b>{item.title}</b><p>{item.body}</p><small>{new Date(item.created_at).toLocaleString()}</small></button>)}
-      {!items.length && <p className="notice-empty">You are all caught up.</p>}
-    </div>}
-  </div>;
-}
+  return (
+  <div className="customer-notification">
+    <button
+      className="customer-bell"
+      aria-label="Customer notifications"
+      onClick={() => setOpen((value) => !value)}
+    >
+      {'\u1F514'} {/* 🔔 bell icon */}
+      {unread > 0 && <i>{unread}</i>}
+    </button>
+    {open && (
+      <div className="customer-notice-menu">
+        <div>
+          <b>Notifications</b>
+          {unread > 0 && <span>{unread} new</span>}
+        </div>
+        {items.map((item) => (
+          <button
+            key={item.id}
+            className={item.read_at ? '' : 'unread'}
+            onClick={() => void markRead(item)}
+          >
+            <b>{item.title}</b>
+            <p>{item.body}</p>
+            <small>{new Date(item.created_at).toLocaleString()}</small>
+          </button>
+        ))}
+        {!items.length && <p className="notice-empty">You are all caught up.</p>}
+      </div>
+    )}
+  </div>
+);
+
