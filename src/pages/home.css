@@ -52,8 +52,8 @@
 .post-card h2,
 .service-detail-hero h1 {
   color: #ffffff !important;   /* headings stand out */
-
+}
 .portal-menu-trigger {
   display: none !important;
 }
-}
+
