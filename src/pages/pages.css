@@ -48,17 +48,14 @@
   font-size: 0.85rem;
   color: #6b7280;
 }
-
 .form {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 2rem !important;
-  max-width: 720px !important;
-
-  /* No border or background */
-  border: none !important;
-  background: transparent !important;
-  box-shadow: none !important;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 720px;
+  border: 1px solid #0a1a2f;
+  background: solid #0a1a2f;
+  box-shadow: none;
 }
 .form {
   display: flex !important;
@@ -66,14 +63,7 @@
   gap: 2rem !important;
   max-width: 720px !important;
 
-  border: none !important;
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
+  /* Remove border and background from the form frame only */
   border: none !important;
   background: transparent !important;
   box-shadow: none !important;
