@@ -349,3 +349,6 @@
   margin-left: auto; /* force profile icon to the far right */
 }
 
+.customer-bell {
+  margin-left: auto; /* move notification bell next to profile icon */
+}
