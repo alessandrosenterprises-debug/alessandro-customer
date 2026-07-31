@@ -54,10 +54,8 @@
   flex-direction: column;
   gap: 2rem;
   max-width: 720px;
-
-  /* Transparent frame */
-  border: 1px solid transparent;
-  background: transparent;
+  border: 1px solid #0a1a2f;
+  background: solid #0a1a2f;
   box-shadow: none;
 }
 
@@ -138,7 +136,7 @@
 .form-group select {
   padding: 0.66rem 0.9rem;
   border: 1px solid #0a1a2f;
-  border-radius: 0px;
+  border-radius: 8px;
   font-size: 0.99rem;
   font-family: inherit;
 }
