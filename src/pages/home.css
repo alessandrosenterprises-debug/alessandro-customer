@@ -57,10 +57,3 @@
   display: none !important;
 }
 
-.header .logo {
-  flex: 1 !important;   /* logo stretches to fill the space */
-}
-
-.header .logo {
-  flex: 1;              /* logo stretches to fill available space */
-}
