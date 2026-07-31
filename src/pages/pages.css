@@ -333,7 +333,7 @@
 }
 .header {
   display: flex;
-  justify-content: space-between; /* logo stays left, profile+bell stay right */
+  justify-content: space-between; /* logo left, actions right */
   align-items: center;
 }
 
@@ -345,12 +345,17 @@
   display: none !important; /* hide the hamburger menu */
 }
 
-.portal-avatar-button {
-  margin-left: auto !important; /* force profile icon to the far right */
+.portal-app-actions {
+  display: flex !important;
+  align-items: center !important;
+  margin-left: auto !important; /* push the whole group to the far right */
+  gap: 12px !important; /* spacing between bell and profile */
 }
 
 .customer-bell {
-  margin-left: auto !important; /* force notification bell next to profile */
+  order: 1 !important; /* bell first */
 }
 
+.portal-avatar-button {
+  order: 2 !important; /* profile after bell */
 }
