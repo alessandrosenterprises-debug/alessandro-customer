@@ -1,0 +1,79 @@
+/* === Strong replacement for home-shortcuts === */
+.home-shortcuts {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important; /* 4 equal columns */
+  gap: 18px !important;                             /* spacing between buttons */
+  width: 100% !important;                           /* stretch full width */
+  margin: 0 auto !important;                        /* center within page */
+  max-width: 1080px !important;                     /* optional limit on very large screens */
+  padding: 0 1rem !important;                       /* respect page margins */
+}
+
+.home-shortcuts a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1rem !important;
+  border-radius: 12px !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  box-sizing: border-box !important;
+}
+
+/* === Strong text color overrides to full white === */
+.home-hero p,
+.home-hero h1 {
+  color: #ffffff !important;   /* pure white for hero text */
+}
+
+.home-shortcuts a {
+  color: #ffffff !important;   /* white labels inside buttons */
+}
+
+
+.home-shortcuts a span {
+  color: #000000 !important;   /* black icons */
+}
+
+/* Service cards text */
+.service-catalogue .service-card-actions a,
+.service-detail-hero p,
+.service-includes li,
+.post-card p {
+  color: #000000 !important;   /* black body text */
+}
+
+.post-card h2,
+.service-detail-hero h1 {
+  color: #000000 !important;   /* black headings */
+}
+
+.post-card h2,
+.service-detail-hero h1 {
+  color: #ffffff !important;   /* headings stand out */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between; /* logo left, notification+profile right */
+  align-items: right;
+}
+
+.portal-menu-trigger {
+  display: none !important; /* hide the hamburger menu */
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* space between bell and profile */
+}
+
+.customer-notification {
+  order: 1; /* bell first */
+}
+
+.portal-avatar-button {
+  order: 2; /* profile after bell */
+}
