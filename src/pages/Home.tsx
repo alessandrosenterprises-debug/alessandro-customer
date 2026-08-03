@@ -8,8 +8,8 @@ import { useRealtimeTable } from '../hooks/useRealtimeTable';
 import { SharedPostFeed } from '../components/SharedPostFeed';
 import type { Customer, Promotion, Service } from '../types';
 import './pages.css';
-import './home.css';
-import { Animated } from '../components/Animated';
+import "./home.css";
+
 
 export function Home() {
   const { user } = useAuth();
@@ -45,48 +45,33 @@ export function Home() {
   const promotion = promotions[0];
 
   return <main className="page app-home">
-    <Animated className="home-hero">
+    <section className="home-hero">
       <p>Welcome back,</p><h1>{name}!</h1><p>Here is what is new at Alessandro Enterprises.</p>
-    </Animated>
-
-    <Animated className="home-shortcuts" style={{ display: 'block' }}>
-      <nav aria-label="Quick actions">
-        <Link to="/promotions"><span>{'\u2605'}</span>Promotions</Link>
-        <Link to="/history"><span>{'\u25A4'}</span>My Bookings</Link>
-        <Link to="/messages"><span>{'\u25CB'}</span>Messages</Link>
-        <Link to="/settings"><span>{'?'}</span>Support</Link>
-      </nav>
-    </Animated>
-
-    {promotion && <Animated className="promotion-spotlight">
-      <section>
-        <span className="promotion-tag">LATEST PROMOTION</span>
-        <h2>{promotion.title}</h2><p>{promotion.description || 'Discover a special offer from Alessandro Enterprises.'}</p>
-        <strong className="promotion-discount">{promotion.discount}%<small> OFF</small></strong>
-        <Link className="btn" to="/promotions">View details</Link>
-      </section>
-    </Animated>}
-
+    </section>
+    <nav className="home-shortcuts" aria-label="Quick actions">
+      <Link to="/promotions"><span>{'\u2605'}</span>Promotions</Link>
+      <Link to="/history"><span>{'\u25A4'}</span>My Bookings</Link>
+      <Link to="/messages"><span>{'\u25CB'}</span>Messages</Link>
+      <Link to="/settings"><span>{'?'}</span>Support</Link>
+    </nav>
+    {promotion && <section className="promotion-spotlight">
+      <span className="promotion-tag">LATEST PROMOTION</span>
+      <h2>{promotion.title}</h2><p>{promotion.description || 'Discover a special offer from Alessandro Enterprises.'}</p>
+      <strong className="promotion-discount">{promotion.discount}%<small> OFF</small></strong>
+      <Link className="btn" to="/promotions">View details</Link>
+    </section>}
     {loading && <div className="page-loading">Loading your dashboard...</div>}
     {error && <div className="page-error">{error}</div>}
-
-    <Animated>
-      <SharedPostFeed />
-    </Animated>
-
-    <Animated>
-      <section>
-        <div className="section-title-row"><h2>Our Services</h2><Link to="/products">View all</Link></div>
-        <div className="home-services">
-          {services.slice(0, 4).map((service) => <button className="home-service-row" key={service.id} onClick={() => navigate(`/products/${service.id}`)}>
-            {service.image_url ? <img src={service.image_url} alt="" /> : <span className="home-service-fallback">{service.name.slice(0, 1)}</span>}
-            <span><h3>{service.name}</h3><p>{service.description || 'View service details and gallery.'}</p><small>View full service and gallery</small></span><b>{'>'}</b>
-          </button>)}
-          {!loading && !services.length && <p className="page-empty">No services are available yet.</p>}
-        </div>
-      </section>
-    </Animated>
+    <SharedPostFeed />
+    <section>
+      <div className="section-title-row"><h2>Our Services</h2><Link to="/products">View all</Link></div>
+      <div className="home-services">
+        {services.slice(0, 4).map((service) => <button className="home-service-row" key={service.id} onClick={() => navigate(`/products/${service.id}`)}>
+          {service.image_url ? <img src={service.image_url} alt="" /> : <span className="home-service-fallback">{service.name.slice(0, 1)}</span>}
+          <span><h3>{service.name}</h3><p>{service.description || 'View service details and gallery.'}</p><small>View full service and gallery</small></span><b>{'>'}</b>
+        </button>)}
+        {!loading && !services.length && <p className="page-empty">No services are available yet.</p>}
+      </div>
+    </section>
   </main>;
 }
-
-export default Home;
